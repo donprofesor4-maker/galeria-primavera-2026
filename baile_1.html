@@ -176,12 +176,13 @@ const lbImg      = document.getElementById('lightbox-img');
 const lbImprimir = document.getElementById('lb-imprimir');
 const fotos      = Array.from(document.querySelectorAll('.foto'));
 let current      = 0;
-const baile      = document.title.split(' · ')[0];
 
 function updateLightbox() {
     const img    = fotos[current].querySelector('img');
     const src    = img.getAttribute('src');
-    const nombre = src.split('/').pop();
+    const partes = src.split('/');
+    const nombre = partes[partes.length - 1];
+    const baile  = partes[partes.length - 2];
     lbImg.src    = src;
     lbImprimir.href = 'mailto:donprofesor4@gmail.com'
         + '?subject=' + encodeURIComponent('Solicitud de impresión - ' + baile)

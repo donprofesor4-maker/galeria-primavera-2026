@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baile 7 · Primavera 2026</title>
+    <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f0f0f;
+    color: #f0f0f0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+header {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    border-bottom: 3px solid #e94560;
+}
+header h1 { font-size: 2.4rem; color: #fff; letter-spacing: 2px; }
+header p  { color: #aaa; margin-top: 0.5rem; font-size: 1rem; }
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #555;
+    font-size: 0.85rem;
+    border-top: 1px solid #222;
+    margin-top: 3rem;
+}
+a { color: inherit; text-decoration: none; }
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 1.5rem 1.5rem 0;
+    color: #e94560;
+    border: 1px solid #e94560;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    pointer-events: auto;
+}
+.back:hover { background: #e94560; color: #fff; }
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+.foto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.foto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.2s, opacity 0.2s;
+    display: block;
+    pointer-events: none;
+}
+.foto:hover img { transform: scale(1.03); opacity: 0.88; }
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.93);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#lightbox.active { display: flex; }
+#lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.9);
+    pointer-events: none;
+}
+#lightbox-close {
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+}
+#lightbox-nav {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+#lightbox-nav button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #555;
+    color: #fff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+}
+#lightbox-nav button:hover { background: #e94560; border-color: #e94560; }
+@media (max-width: 600px) {
+    .galeria { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .foto img { height: 140px; }
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>🎭 baile 7</h1>
+    <p>62 fotos · Primavera 2026</p>
+</header>
+<a class="back" href="index.html">← Volver</a>
+<div class="galeria"><div class="foto"><img src="fotos/baile 7/DSC_0682.jpg" alt="DSC_0682.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0683.jpg" alt="DSC_0683.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0684.jpg" alt="DSC_0684.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0685.jpg" alt="DSC_0685.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0686.jpg" alt="DSC_0686.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0687.jpg" alt="DSC_0687.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0688.jpg" alt="DSC_0688.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0689.jpg" alt="DSC_0689.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0690.jpg" alt="DSC_0690.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0691.jpg" alt="DSC_0691.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0692.jpg" alt="DSC_0692.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0693.jpg" alt="DSC_0693.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0694.jpg" alt="DSC_0694.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0695.jpg" alt="DSC_0695.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0696.jpg" alt="DSC_0696.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0697.jpg" alt="DSC_0697.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0698.jpg" alt="DSC_0698.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0699.jpg" alt="DSC_0699.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0700.jpg" alt="DSC_0700.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0701.jpg" alt="DSC_0701.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0702.jpg" alt="DSC_0702.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0703.jpg" alt="DSC_0703.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0704.jpg" alt="DSC_0704.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0705.jpg" alt="DSC_0705.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0706.jpg" alt="DSC_0706.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0707.jpg" alt="DSC_0707.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0708.jpg" alt="DSC_0708.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0709.jpg" alt="DSC_0709.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0710.jpg" alt="DSC_0710.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0711.jpg" alt="DSC_0711.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0712.jpg" alt="DSC_0712.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0713.jpg" alt="DSC_0713.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0714.jpg" alt="DSC_0714.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0715.jpg" alt="DSC_0715.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0716.jpg" alt="DSC_0716.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0717.jpg" alt="DSC_0717.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0718.jpg" alt="DSC_0718.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0719.jpg" alt="DSC_0719.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0720.jpg" alt="DSC_0720.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0721.jpg" alt="DSC_0721.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0722.jpg" alt="DSC_0722.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0723.jpg" alt="DSC_0723.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0724.jpg" alt="DSC_0724.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0725.jpg" alt="DSC_0725.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0726.jpg" alt="DSC_0726.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0727.jpg" alt="DSC_0727.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0728.jpg" alt="DSC_0728.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0729.jpg" alt="DSC_0729.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0730.jpg" alt="DSC_0730.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0731.jpg" alt="DSC_0731.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0732.jpg" alt="DSC_0732.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0733.jpg" alt="DSC_0733.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0734.jpg" alt="DSC_0734.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0735.jpg" alt="DSC_0735.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0736.jpg" alt="DSC_0736.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0737.jpg" alt="DSC_0737.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0738.jpg" alt="DSC_0738.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0739.jpg" alt="DSC_0739.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0740.jpg" alt="DSC_0740.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0741.jpg" alt="DSC_0741.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0742.jpg" alt="DSC_0742.jpg" loading="lazy"></div><div class="foto"><img src="fotos/baile 7/DSC_0743.jpg" alt="DSC_0743.jpg" loading="lazy"></div></div>
+<div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-nav">
+        <button id="lb-prev">&#8592;</button>
+        <button id="lb-next">&#8594;</button>
+    </div>
+</div>
+<footer>Primavera 2026 · Colegio de Cervantes<br><small>© Cactus Multimedia · Todos los derechos reservados</small></footer>
+<script>
+// Bloquea clic derecho
+document.addEventListener('contextmenu', e => e.preventDefault());
+// Bloquea arrastre de imágenes
+document.addEventListener('dragstart', e => e.preventDefault());
+// Bloquea atajos de teclado de guardar/imprimir
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && ['s','p','u'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+    }
+});
+
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lightbox-img');
+const fotos    = Array.from(document.querySelectorAll('.foto'));
+let current    = 0;
+
+function openLightbox(idx) {
+    current = idx;
+    lbImg.src = fotos[current].querySelector('img').src;
+    lightbox.classList.add('active');
+}
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    lbImg.src = '';
+}
+function prev() { current = (current - 1 + fotos.length) % fotos.length; lbImg.src = fotos[current].querySelector('img').src; }
+function next() { current = (current + 1) % fotos.length; lbImg.src = fotos[current].querySelector('img').src; }
+
+fotos.forEach((f, i) => f.addEventListener('click', () => openLightbox(i)));
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', prev);
+document.getElementById('lb-next').addEventListener('click', next);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+});
+</script>
+</body>
+</html>

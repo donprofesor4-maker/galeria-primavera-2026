@@ -171,45 +171,37 @@ document.addEventListener('keydown', e => {
         e.preventDefault();
     }
 });
-
-const lightbox  = document.getElementById('lightbox');
-const lbImg     = document.getElementById('lightbox-img');
+const lightbox   = document.getElementById('lightbox');
+const lbImg      = document.getElementById('lightbox-img');
 const lbImprimir = document.getElementById('lb-imprimir');
-const fotos     = Array.from(document.querySelectorAll('.foto'));
-let current     = 0;
-const baile     = document.title.split(' · ')[0];
+const fotos      = Array.from(document.querySelectorAll('.foto'));
+let current      = 0;
+const baile      = document.title.split(' · ')[0];
 
-function openLightbox(idx) {{
-    current = idx;
-    const src = fotos[current].querySelector('img').src;
+function updateLightbox() {
+    const img    = fotos[current].querySelector('img');
+    const src    = img.getAttribute('src');
     const nombre = src.split('/').pop();
-    lbImg.src = src;
-    lbImprimir.href = `mailto:donprofesor4@gmail.com?subject=Solicitud%20de%20impresión&body=Hola%2C%20me%20interesa%20imprimir%20la%20foto%3A%20${{nombre}}%20del%20${{baile}}.%20Por%20favor%20contáctenme.`;
-    lightbox.classList.add('active');
-}}
-function closeLightbox() {{
-    lightbox.classList.remove('active');
-    lbImg.src = '';
-}}
-function prev() {{ current = (current - 1 + fotos.length) % fotos.length; updateLightbox(); }}
-function next() {{ current = (current + 1) % fotos.length; updateLightbox(); }}
-function updateLightbox() {{
-    const src = fotos[current].querySelector('img').src;
-    const nombre = src.split('/').pop();
-    lbImg.src = src;
-    lbImprimir.href = `mailto:donprofesor4@gmail.com?subject=Solicitud%20de%20impresión&body=Hola%2C%20me%20interesa%20imprimir%20la%20foto%3A%20${{nombre}}%20del%20${{baile}}.%20Por%20favor%20contáctenme.`;
-}}
+    lbImg.src    = src;
+    lbImprimir.href = 'mailto:donprofesor4@gmail.com'
+        + '?subject=' + encodeURIComponent('Solicitud de impresión - ' + baile)
+        + '&body='    + encodeURIComponent('Hola, me interesa imprimir la foto: ' + nombre + ' del ' + baile + '. Por favor contáctenme.');
+}
+function openLightbox(idx) { current = idx; updateLightbox(); lightbox.classList.add('active'); }
+function closeLightbox()   { lightbox.classList.remove('active'); lbImg.src = ''; }
+function prev() { current = (current - 1 + fotos.length) % fotos.length; updateLightbox(); }
+function next() { current = (current + 1) % fotos.length; updateLightbox(); }
 
 fotos.forEach((f, i) => f.addEventListener('click', () => openLightbox(i)));
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 document.getElementById('lb-prev').addEventListener('click', prev);
 document.getElementById('lb-next').addEventListener('click', next);
-lightbox.addEventListener('click', e => {{ if (e.target === lightbox) closeLightbox(); }});
-document.addEventListener('keydown', e => {{
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') prev();
     if (e.key === 'ArrowRight') next();
-}});
+});
 </script>
 </body>
 </html>
